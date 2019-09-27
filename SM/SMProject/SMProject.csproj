@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70CF043E-8F11-4D64-9A9C-F897E26737E0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SMProject</RootNamespace>
+    <AssemblyName>SMProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBalance.Designer.cs">
+      <DependentUpon>FrmBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSaleManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSaleManage.Designer.cs">
+      <DependentUpon>FrmSaleManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBalance.resx">
+      <DependentUpon>FrmBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSaleManage.resx">
+      <DependentUpon>FrmSaleManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="资源文件\项目中用到的ico文件和图片\1.png" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\2.png" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\3.png" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\4.png" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\5.jpg" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\about.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\App.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\ATTACHED.ICO" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\bMan..ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\BOOKS01.ICO" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\Cancel.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\CHECKMRK.ICO" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\Close.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\CustomerOrder.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\DataBase.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\default.png" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\DeliveryOrder.ICO" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\downLoad.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\exit.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\key_32.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\lklLogin.ICO" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\lklLoginExit.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\login.jpg" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\mainbg.png" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\MngDowndown.bmp" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\MngIncdown.bmp" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\MngUpover.bmp" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\mrp.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\Msg.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\open.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\people.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\Print.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\Print1.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\PROPS.ICO" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\Purchase.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\Query.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\Save.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\Sells.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\student.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\SysIco.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\TABLE.ICO" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\turn.BMP" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\UserLogin.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\UserPsw.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\Users.ico" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\上记录.bmp" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\下记录.bmp" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\保存.bmp" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\修改.bmp" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\关闭.bmp" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\删除.bmp" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\取消.bmp" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\学员管理系统logo.jpg" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\尾记录.bmp" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\打印.BMP" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\搜索.bmp" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\新增.bmp" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\查询选择.bmp" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\计算.bmp" />
+    <Content Include="资源文件\项目中用到的ico文件和图片\首记录.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{4030cd32-6c3f-4c79-8e83-4d33e580800b}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{ce476d1d-c787-4163-b6ea-738f54c24ef1}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
