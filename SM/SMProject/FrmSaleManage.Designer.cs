@@ -271,6 +271,7 @@
             this.txtProductId.Name = "txtProductId";
             this.txtProductId.Size = new System.Drawing.Size(223, 29);
             this.txtProductId.TabIndex = 91;
+            this.txtProductId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtProductId_KeyDown);
             // 
             // label2
             // 
@@ -438,9 +439,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmSaleManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[喜科堂互联教育]-超市前台结算系统-xiketang.com";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmSaleManage_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

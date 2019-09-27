@@ -14,7 +14,7 @@ namespace DAL
     /// </summary>
     public class SalesPersonService
     {
-        #region 登录日志记录
+        #region 日志记录
         /// <summary>
         /// 添加登录日志，返回日志编号
         /// </summary>
@@ -34,14 +34,39 @@ namespace DAL
             {
                 return Convert.ToInt32(SQLHelper.ExecuteScalar(sql, salParameters));
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine(e);
-                throw;
+                throw ex;
             }
         }
-        #endregion
 
+        /// <summary>
+        /// 用户退出日志记录
+        /// </summary>
+        /// <param name="logId"></param>
+        /// <param name="dt"></param>
+        /// <returns></returns>
+        public int WriteExitLog(int logId,DateTime dt)
+        {
+            string sql = "update LoginLogs set ExitTime=@ExitTime where LogId=@LogId";
+            SqlParameter[] salParameters = new SqlParameter[]
+            {
+                new SqlParameter("@ExitTime",dt),
+                new SqlParameter("@LogId",logId),
+            };
+
+            try
+            {
+                return Convert.ToInt32(SQLHelper.ExecuteNonQuery(sql, salParameters));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        #endregion
 
         #region 销售人员登录
         /// <summary>
@@ -75,6 +100,22 @@ namespace DAL
             {
                 throw ex;
             }
+        }
+        #endregion
+
+        #region 获取服务器时间
+        public DateTime GetDBServerTime()
+        {
+            try
+            {
+                return SQLHelper.GetServerTime();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+           
+
         }
         #endregion
     }
