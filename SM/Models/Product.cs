@@ -15,7 +15,7 @@ namespace Models
         public string ProductId { get; set; }
         public string ProductName { get; set; }
 
-        public double UnitPrice { get; set; }
+        public decimal UnitPrice { get; set; }
 
         public int Discount { get; set; }
 
@@ -32,7 +32,7 @@ namespace Models
         //商品数量
         public int Quantity { get; set; }
         //小计金额
-        public double SubTotal { get; set; }
+        public decimal SubTotal { get; set; }
 
 
 

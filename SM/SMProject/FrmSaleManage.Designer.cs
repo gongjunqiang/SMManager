@@ -149,6 +149,7 @@
             this.txtDiscount.TabIndex = 94;
             this.txtDiscount.Text = "0";
             this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDiscount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtOther_KeyDown);
             // 
             // txtUnitPrice
             // 
@@ -159,6 +160,7 @@
             this.txtUnitPrice.TabIndex = 93;
             this.txtUnitPrice.Text = "0.00";
             this.txtUnitPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtUnitPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtOther_KeyDown);
             // 
             // label8
             // 
@@ -230,6 +232,7 @@
             this.txtQuantity.TabIndex = 92;
             this.txtQuantity.Text = "1";
             this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQuantity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtOther_KeyDown);
             // 
             // label6
             // 
@@ -309,13 +312,11 @@
             // dgvProdutList
             // 
             this.dgvProdutList.AllowUserToAddRows = false;
-            this.dgvProdutList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProdutList.BackgroundColor = System.Drawing.Color.Blue;
+            this.dgvProdutList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvProdutList.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
             this.dgvProdutList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
@@ -344,17 +345,21 @@
             this.dgvProdutList.Location = new System.Drawing.Point(1, 1);
             this.dgvProdutList.Name = "dgvProdutList";
             this.dgvProdutList.ReadOnly = true;
+            this.dgvProdutList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvProdutList.RowHeadersVisible = false;
             this.dgvProdutList.RowHeadersWidth = 45;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DodgerBlue;
             this.dgvProdutList.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProdutList.RowTemplate.Height = 23;
             this.dgvProdutList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProdutList.Size = new System.Drawing.Size(919, 481);
+            this.dgvProdutList.Size = new System.Drawing.Size(919, 497);
             this.dgvProdutList.TabIndex = 53;
+            this.dgvProdutList.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DgvProdutList_RowsRemoved);
             // 
             // Num
             // 
@@ -413,7 +418,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Blue;
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(920, 641);
             this.Controls.Add(this.dgvProdutList);
             this.Controls.Add(this.lblSerialNum);

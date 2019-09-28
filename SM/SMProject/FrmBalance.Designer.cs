@@ -32,12 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblTotalMoney = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtRecieveMoney = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtMemberNo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -70,17 +70,17 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "会员号：";
             // 
-            // label4
+            // lblTotalMoney
             // 
-            this.label4.BackColor = System.Drawing.Color.DarkGray;
-            this.label4.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(114, 27);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 28);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "0.00";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTotalMoney.BackColor = System.Drawing.Color.DarkGray;
+            this.lblTotalMoney.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTotalMoney.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTotalMoney.Location = new System.Drawing.Point(114, 27);
+            this.lblTotalMoney.Name = "lblTotalMoney";
+            this.lblTotalMoney.Size = new System.Drawing.Size(122, 28);
+            this.lblTotalMoney.TabIndex = 0;
+            this.lblTotalMoney.Text = "0.00";
+            this.lblTotalMoney.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -92,13 +92,15 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "元";
             // 
-            // textBox1
+            // txtRecieveMoney
             // 
-            this.textBox1.Location = new System.Drawing.Point(114, 81);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(122, 28);
-            this.textBox1.TabIndex = 1;
+            this.txtRecieveMoney.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
+            this.txtRecieveMoney.Location = new System.Drawing.Point(114, 81);
+            this.txtRecieveMoney.Name = "txtRecieveMoney";
+            this.txtRecieveMoney.Size = new System.Drawing.Size(122, 30);
+            this.txtRecieveMoney.TabIndex = 1;
+            this.txtRecieveMoney.Text = "0.00";
+            this.txtRecieveMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -110,14 +112,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "元";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(114, 140);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 28);
-            this.textBox2.TabIndex = 1;
-            // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Silver;
@@ -127,19 +121,28 @@
             this.label7.Size = new System.Drawing.Size(309, 2);
             this.label7.TabIndex = 2;
             // 
+            // txtMemberNo
+            // 
+            this.txtMemberNo.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
+            this.txtMemberNo.Location = new System.Drawing.Point(114, 144);
+            this.txtMemberNo.Name = "txtMemberNo";
+            this.txtMemberNo.Size = new System.Drawing.Size(162, 30);
+            this.txtMemberNo.TabIndex = 3;
+            this.txtMemberNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtMemberNo_KeyDown);
+            // 
             // FrmBalance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 177);
+            this.ClientSize = new System.Drawing.Size(308, 183);
+            this.Controls.Add(this.txtMemberNo);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtRecieveMoney);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblTotalMoney);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -157,11 +160,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTotalMoney;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtRecieveMoney;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtMemberNo;
     }
 }
