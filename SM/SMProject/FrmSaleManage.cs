@@ -29,8 +29,6 @@ namespace SMProject
             this.lblSalePerson.Text = Program.currentSalesPerson.SPName;
             //生成流水号
             this.lblSerialNum.Text = CreateSeriaINum();
-
-
             this.dgvProdutList.AutoGenerateColumns = false;
         }
 
@@ -64,7 +62,6 @@ namespace SMProject
         }
 
         #endregion
-
 
         #region 扫描商品条码、上下移动选择商品、删除商品、商品计算、系统退出的时间的“入口”
         private void TxtProductId_KeyDown(object sender, KeyEventArgs e)
@@ -159,7 +156,7 @@ namespace SMProject
 
         }
 
-        #region 商品计算
+        #region 商品结算
         private void Balance()
         {
             //【1】打开UI界面:考虑取消或者修改的情况
@@ -227,7 +224,7 @@ namespace SMProject
                 }
 
                 //【6】打印小票
-
+                this.printDocument.Print();
                 //【7】生成新的流水号
                 RestForm();
             }
@@ -314,6 +311,7 @@ namespace SMProject
 
         }
         #endregion
+
         #region 数量、单价、折扣回车键商品编号获取焦点
 
 
@@ -331,12 +329,6 @@ namespace SMProject
         }
         #endregion
         #endregion
-
-
-
-
-
-
 
         #region 退出日志记录
         /// <summary>
@@ -379,6 +371,14 @@ namespace SMProject
             return seriaINum;
         }
 
-
+        /// <summary>
+        /// 打印
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            USBPrint.Print(e, this.productList, this.lblSerialNum.Text, this.lblSalePerson.Text);
+        }
     }
 }
