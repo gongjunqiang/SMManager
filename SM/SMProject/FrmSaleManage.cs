@@ -66,9 +66,6 @@ namespace SMProject
         #region 扫描商品条码、上下移动选择商品、删除商品、商品计算、系统退出的时间的“入口”
         private void TxtProductId_KeyDown(object sender, KeyEventArgs e)
         {
-            this.Text = e.KeyValue.ToString();
-
-
             //回车键：将当前商品添加刀商品列表中
             if (e.KeyValue == 13)
             {
@@ -379,6 +376,21 @@ namespace SMProject
         private void PrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             USBPrint.Print(e, this.productList, this.lblSerialNum.Text, this.lblSalePerson.Text);
+        }
+
+        #region 窗体输入框获取焦点的两种方式
+
+        //方法一：给需要获取焦点的输入框的Tabindex属性设置为1
+
+        /// <summary>
+        /// 方法二：添加窗体激活事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #endregion
+        private void FrmSaleManage_Activated(object sender, EventArgs e)
+        {
+            this.txtProductId.Focus();
         }
     }
 }
